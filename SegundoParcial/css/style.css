@@ -1,0 +1,128 @@
+*{
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  background-color: rgba(244, 236, 236, 0.973);
+
+}
+
+h3{
+  position: absolute;
+  margin-left: 20px;
+}
+
+#filtros{
+  display: flex;
+  float: right;
+  margin-right:40px;
+  margin-top: 15px;
+}
+
+#container{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+}
+
+.grilla{
+width: 100%;
+border-collapse: collapse;
+}
+
+#formulario{
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  flex-direction:column;
+  padding: 5px;
+  margin-top: -360px;
+  width: 98%;
+  height: 300px;
+}
+
+#listado{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+tr{
+  width: 100%;
+  justify-content:space-around;
+}
+
+th,td{
+  text-align: initial;
+  padding: 5px;
+}
+
+tr:nth-child(odd){
+  background-color: rgb(232, 225, 225);
+}
+
+#cabecera{
+  background-color: rgb(71, 196, 179);
+  color: white;
+  font-size: 14px;
+}
+
+
+#btnAgregar{
+  width: 130px;
+  height: 30px;
+  color: honeydew;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  background-color: rgba(49, 173, 97, 0.863);
+}
+
+#btnEliminar{
+  width: 130px;
+  height: 30px;
+  color: honeydew;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  background-color: rgba(207, 58, 12, 0.863);
+}
+
+#btnLimpiar{
+  width: 130px;
+  height: 30px;
+  color: honeydew;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  background-color: rgba(12, 201, 207, 0.863);
+}
+
+
+.inputs{
+  width: 94%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#promEdad{
+  width: 100px;
+}
+

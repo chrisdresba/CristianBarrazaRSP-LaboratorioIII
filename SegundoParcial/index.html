@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer type="module"></script>
+    <script src="js/Vehiculo.js" defer type="module"></script>
+    <script src="js/Auto.js" defer type="module"></script>
+    <script src="js/Camioneta.js" defer type="module"></script>
+    <title>Segundo Parcial</title>
+</head>
+
+<body>
+
+    <div id="container">
+
+        <div id="formulario">
+            <br />
+            <label for="">ID:</label>
+            <input class="inputs" type="text" id="txtId" disabled/>
+            <br />
+            <label for="">Marca:</label>
+            <input class="inputs" type="text" id="txtMarca" />
+            <br />
+            <label for="">Modelo:</label>
+            <input class="inputs" type="text" id="txtModelo" value=""/>
+            <br />
+            <label for="">Precio:</label> 
+            <input class="inputs" type="text" id="txtPrecio" value=""/>
+            <br />
+            <label for="">Tipo:</label>
+            <select id="tipo">
+                <option value="Camioneta">Camioneta</option>
+                <option value="Auto">Auto</option>
+            </select>
+            <br />
+            <button id="btnAgregar" value="">Agregar</button>
+            <button id="btnEliminar" value="">Eliminar</button>
+            <select name="filtros" id="filtros">
+                <option value="0" id="locDefault">Filtrar...</option>
+                <option value="1">Auto</option>
+                <option value="2">Camioneta</option>
+            </select>
+
+            <label for="">Promedio de precio:</label> 
+            <input type="text" id="promPrecio" value=""/>
+            <button id="btnPromedio" value="">Promedio</button>
+            <br />
+             <br />
+            <label for=""> <b>Campos mostrados</b> Tildar los campos a mostrar:</label> 
+            <label><input type="checkbox" id="chk_id" checked="checked" value="cboxId">Id:</label>
+            <label><input type="checkbox" id="chk_marca" checked="checked" value="cboxMarca">Marca:</label>
+            <label><input type="checkbox" id="chk_modelo" checked="checked" value="cboxModelo">Modelo:</label>
+            <label><input type="checkbox" id="chk_precio" checked="checked" value="cboxPrecio">Precio:</label>
+
+            <div id="listado">  
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

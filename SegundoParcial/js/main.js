@@ -93,6 +93,7 @@ function CargarTabla(vehiculos) {
         let celda = document.createElement("td");
         let eliminar = document.createElement("button");
         eliminar.setAttribute("idFila",vehiculo.id);
+        eliminar.setAttribute("class","btnEliminar");
         eliminar.appendChild(document.createTextNode("Eliminar"));
         eliminar.addEventListener("click",eliminarElemento);
         celda.appendChild(eliminar);
@@ -203,25 +204,16 @@ function crearVehiculoPorId(id) {
 }
 
 
-function RemoverDelListado(object) {
+function RemoverDelListado(id) {
 
     for (let i = 0; i < vehiculos.length; i++) {
-        if (object.id == vehiculos[i].id) {
+        if (id == vehiculos[i].id) {
             vehiculos.splice(i, 1);
             console.log("comprobación Id removido");
         }
     }
 }
 
-function jsonEliminar() {
-
-    let id = $("txtMarca").getAttribute("movil");
-
-    let json = { "id": id };
-
-    return json;
-
-}
 
 function eliminarElemento(event) {
     let elemento = event.target;
@@ -229,8 +221,7 @@ function eliminarElemento(event) {
     let fila = $(id);
     let tabla = $("tabla");
     tabla.removeChild(fila);
-    let v = jsonEliminar();
-    RemoverDelListado(v);
+    RemoverDelListado(id);
 }
 
 

@@ -6,13 +6,15 @@ body, html {
   width: 100%;
   height: 100%;
   margin: 0px;
-  background-color: rgba(244, 236, 236, 0.973);
+  background-color: rgba(117, 200, 238, 0.193);
 
 }
 
-h3{
-  position: absolute;
-  margin-left: 20px;
+h1,h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 #filtros{
@@ -43,13 +45,15 @@ border-collapse: collapse;
   width: 100%;
   height: 100%;
   visibility: hidden;
+  visibility: visible;
   flex-direction:column;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   padding: 5px;
   margin-top: 130px;
   margin-left: 25%;
   width: 50%;
   z-index: 1000;
-  background-color: rgb(177, 192, 191);
+  background-color: rgb(159, 197, 195);
   height: 430px;
 }
 
@@ -72,7 +76,6 @@ border-collapse: collapse;
   height: 100%;
   text-align: center;
   margin: auto;
-  margin-top: 10px;
   margin-right: 10px;
   padding: 10px;
 }
@@ -88,24 +91,31 @@ th,td{
 }
 
 tr:nth-child(odd){
-  background-color: rgb(232, 225, 225);
+  background-color: rgb(64, 190, 212,0.35);
 }
 
 #cabecera{
-  background-color: rgb(71, 196, 179);
+  background-color: rgb(16, 192, 169);
   color: white;
   font-size: 14px;
 }
 
-
+.btnEliminar{
+  background-color: rgb(255, 3, 3,0.72);
+  color: white;
+  border: inherit;
+  border-radius: 4px;
+}
 #btnAgregar{
   width: 130px;
   height: 30px;
-  color: honeydew;
-  margin-left: 10px;
+  color: rgb(224, 250, 224);
+  margin-left: 35%;
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 14px;
+  border-radius: 2px;
+  border: lightgray;
   background-color: rgba(49, 173, 97, 0.863);
 }
 
@@ -117,15 +127,23 @@ tr:nth-child(odd){
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 14px;
-  background-color: rgba(49, 173, 97, 0.863);
+  background-color: rgba(63, 154, 228, 0.863);
 }
 
 #btnCerrar{
   width: 30px;
   height: 30px;
+  margin-left: 90%;
+  font-size: 14px;
+  border-radius: 2px;
+  border: lightgray;
   background-color: rgb(228, 72, 72);
 
 }
+
+#btnPromedio{
+  margin-left: 10px;
+}  
 
 .inputs{
   width: 94%;
@@ -133,7 +151,7 @@ tr:nth-child(odd){
   margin-bottom: 10px;
 }
 
-#promEdad{
+#promPrecio{
   width: 100px;
 }
 

@@ -53,6 +53,11 @@ function CargarTabla(vehiculos) {
             fila.appendChild(auxPrecio);
         }
 
+        let auxAccion = document.createElement("th");
+        let txt = document.createTextNode("Accion");
+        auxAccion.appendChild(txt);
+        fila.appendChild(auxAccion);
+
         tabla.appendChild(fila);
 
     }
@@ -85,7 +90,13 @@ function CargarTabla(vehiculos) {
             fila.appendChild(celda);
         }
 
-        fila.addEventListener("dblclick", cargaFormulario);
+        let celda = document.createElement("td");
+        let eliminar = document.createElement("button");
+        eliminar.setAttribute("idFila",vehiculo.id);
+        eliminar.appendChild(document.createTextNode("Eliminar"));
+        eliminar.addEventListener("click",eliminarElemento);
+        celda.appendChild(eliminar);
+        fila.appendChild(celda);
 
         tabla.appendChild(fila);
     });
@@ -129,35 +140,6 @@ function TraerVehiculos(elementos) {
 
 }
 
-
-function cargaFormulario(e) {
-
-    let formulario = $("formulario");
-    let id = e.currentTarget.id;
-    formulario.style.visibility = "visible";
-    cargarVehiculosPorId(id);
-
-}
-
-function cargarVehiculosPorId(id) {
-
-    vehiculos.forEach((vehiculo) => {
-
-        if (vehiculo.id.toString() == id) {
-            $("txtId").value = vehiculo.id;
-            $("txtMarca").value = vehiculo.marca;
-            $("txtModelo").value = vehiculo.modelo;
-            $("txtPrecio").value = vehiculo.precio;
-            $("tipo").value = vehiculo.tipo;
-            $("txtMarca").setAttribute("movil", vehiculo.id);
-
-            $("txtMarca").style.borderColor = "white";
-            $("txtModelo").style.borderColor = "white";
-
-        };
-    })
-
-}
 
 function mayorId() {
 
@@ -220,13 +202,6 @@ function crearVehiculoPorId(id) {
 
 }
 
-function EliminarFila() {
-
-    let v = jsonEliminar();
-    RemoverDelListado(v);
-    eliminarElemento();
-}
-
 
 function RemoverDelListado(object) {
 
@@ -248,11 +223,14 @@ function jsonEliminar() {
 
 }
 
-function eliminarElemento() {
-    let id = $("txtMarca").getAttribute("movil");
+function eliminarElemento(event) {
+    let elemento = event.target;
+    let id = elemento.getAttribute("idFila");
     let fila = $(id);
     let tabla = $("tabla");
     tabla.removeChild(fila);
+    let v = jsonEliminar();
+    RemoverDelListado(v);
 }
 
 
@@ -320,6 +298,10 @@ window.addEventListener("load", () => {
 
     GetVehiculos();
 
+    $("btnAlta").addEventListener("click", () => {
+        $("formulario").style.visibility = "visible";
+    });
+
     $("btnAgregar").addEventListener("click", (e) => {
 
         if (ValidarCampos()) {
@@ -332,14 +314,6 @@ window.addEventListener("load", () => {
 
     });
 
-    $("btnEliminar").addEventListener("click", (e) => {
-
-        EliminarFila();
-    });
-
-    $("btnLimpiar").addEventListener("click", () => {
-        limpiarTabla();
-    });
 
     $("btnPromedio").addEventListener("click", () => {
 
@@ -352,6 +326,10 @@ window.addEventListener("load", () => {
         listaAuxiliar = FiltrarVehiculos();
         limpiarTabla();
         CargarTabla(listaAuxiliar);
+    });
+
+    $("btnCerrar").addEventListener("click", () => {
+        $("formulario").style.visibility = "hidden";
     });
 
     $("chk_id").addEventListener("change", filtrarListado);

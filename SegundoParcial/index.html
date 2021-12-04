@@ -17,46 +17,55 @@
 
     <div id="container">
 
-        <div id="formulario">
-            <br />
-            <label for="">ID:</label>
-            <input class="inputs" type="text" id="txtId" disabled/>
-            <br />
-            <label for="">Marca:</label>
-            <input class="inputs" type="text" id="txtMarca" />
-            <br />
-            <label for="">Modelo:</label>
-            <input class="inputs" type="text" id="txtModelo" value=""/>
-            <br />
-            <label for="">Precio:</label> 
-            <input class="inputs" type="text" id="txtPrecio" value=""/>
-            <br />
-            <label for="">Tipo:</label>
-            <select id="tipo">
-                <option value="Camioneta">Camioneta</option>
-                <option value="Auto">Auto</option>
-            </select>
-            <br />
-            <button id="btnAgregar" value="">Agregar</button>
-            <button id="btnEliminar" value="">Eliminar</button>
+        <div id="plantilla">
+      
+            <div id="formulario">
+                <br />
+                <button id="btnCerrar">x</button>
+                <h1>Alta Vehiculo</h1>
+                <label for="">ID:</label>
+                <input class="inputs" type="text" id="txtId" disabled />
+                <br />
+                <label for="">Marca:</label>
+                <input class="inputs" type="text" id="txtMarca" />
+                <br />
+                <label for="">Modelo:</label>
+                <input class="inputs" type="text" id="txtModelo" value="" />
+                <br />
+                <label for="">Precio:</label>
+                <input class="inputs" type="number" id="txtPrecio" value="" />
+                <br />
+                <label for="">Tipo:</label>
+                <select id="tipo">
+                    <option value="Camioneta">Camioneta</option>
+                    <option value="Auto">Auto</option>
+                </select>
+                <br />
+                <button id="btnAgregar" value="">Agregar</button>
+            </div>
             <select name="filtros" id="filtros">
                 <option value="0" id="locDefault">Filtrar...</option>
                 <option value="1">Auto</option>
                 <option value="2">Camioneta</option>
             </select>
 
-            <label for="">Promedio de precio:</label> 
-            <input type="text" id="promPrecio" value=""/>
+            <br />
+            <button id="btnAlta" value="">Alta</button>
+            <br />
+            <br />
+
+            <label for="">Promedio de precio:</label>
+            <input type="text" id="promPrecio" value="" />
             <button id="btnPromedio" value="">Promedio</button>
             <br />
-             <br />
-            <label for=""> <b>Campos mostrados</b> Tildar los campos a mostrar:</label> 
+            <br />
+            <label for=""> <b>Campos mostrados</b> Tildar los campos a mostrar:</label>
             <label><input type="checkbox" id="chk_id" checked="checked" value="cboxId">Id:</label>
             <label><input type="checkbox" id="chk_marca" checked="checked" value="cboxMarca">Marca:</label>
             <label><input type="checkbox" id="chk_modelo" checked="checked" value="cboxModelo">Modelo:</label>
             <label><input type="checkbox" id="chk_precio" checked="checked" value="cboxPrecio">Precio:</label>
 
-            <div id="listado">  
+            <div id="listado">
             </div>
         </div>
     </div>

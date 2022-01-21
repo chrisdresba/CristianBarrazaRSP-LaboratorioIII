@@ -1,4 +1,4 @@
-# CristianBarrazaRSP-LaboratorioIII
+# Recuperatorio de Segundo Parcial de Laboratorio III (JavaScript,HTML,CSS)
 
 ABM de Vehiculos
 
